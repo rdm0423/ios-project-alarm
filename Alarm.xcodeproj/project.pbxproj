@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		1A0FB77F1CDD4F07006808D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0FB77E1CDD4F07006808D9 /* AppDelegate.swift */; };
-		1A0FB7841CDD4F07006808D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0FB7821CDD4F07006808D9 /* Main.storyboard */; };
 		1A0FB7861CDD4F07006808D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0FB7851CDD4F07006808D9 /* Assets.xcassets */; };
 		1A0FB7891CDD4F07006808D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0FB7871CDD4F07006808D9 /* LaunchScreen.storyboard */; };
 		1A0FB7BF1CE19229006808D9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0FB7BE1CE19229006808D9 /* DateHelper.swift */; };
+		FF80EEF11CEA61B2006158EA /* AlarmListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF80EEF01CEA61B2006158EA /* AlarmListTableViewController.swift */; };
+		FF80EEF31CEA61E5006158EA /* AlarmDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF80EEF21CEA61E5006158EA /* AlarmDetailTableViewController.swift */; };
+		FF80EEF51CEA620E006158EA /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF80EEF41CEA620E006158EA /* SwitchTableViewCell.swift */; };
+		FF80EEF71CEA6262006158EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF80EEF61CEA6262006158EA /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A0FB77B1CDD4F07006808D9 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A0FB77E1CDD4F07006808D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1A0FB7831CDD4F07006808D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A0FB7851CDD4F07006808D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A0FB7881CDD4F07006808D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A0FB78A1CDD4F07006808D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A0FB7BE1CE19229006808D9 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		FF80EEF01CEA61B2006158EA /* AlarmListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewController.swift; sourceTree = "<group>"; };
+		FF80EEF21CEA61E5006158EA /* AlarmDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDetailTableViewController.swift; sourceTree = "<group>"; };
+		FF80EEF41CEA620E006158EA /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		FF80EEF61CEA6262006158EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,32 @@
 			isa = PBXGroup;
 			children = (
 				1A0FB77E1CDD4F07006808D9 /* AppDelegate.swift */,
-				1A0FB7821CDD4F07006808D9 /* Main.storyboard */,
+				FF80EEF81CEA637F006158EA /* Views */,
 				1A0FB7BE1CE19229006808D9 /* DateHelper.swift */,
+				FF80EEF61CEA6262006158EA /* Main.storyboard */,
 				1A0FB7851CDD4F07006808D9 /* Assets.xcassets */,
 				1A0FB7871CDD4F07006808D9 /* LaunchScreen.storyboard */,
 				1A0FB78A1CDD4F07006808D9 /* Info.plist */,
 			);
 			path = Alarm;
+			sourceTree = "<group>";
+		};
+		FF80EEF81CEA637F006158EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF80EEF01CEA61B2006158EA /* AlarmListTableViewController.swift */,
+				FF80EEF21CEA61E5006158EA /* AlarmDetailTableViewController.swift */,
+				FF80EEF91CEA6387006158EA /* Custom Cell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FF80EEF91CEA6387006158EA /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FF80EEF41CEA620E006158EA /* SwitchTableViewCell.swift */,
+			);
+			name = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +147,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF80EEF71CEA6262006158EA /* Main.storyboard in Resources */,
 				1A0FB7891CDD4F07006808D9 /* LaunchScreen.storyboard in Resources */,
 				1A0FB7861CDD4F07006808D9 /* Assets.xcassets in Resources */,
-				1A0FB7841CDD4F07006808D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A0FB77F1CDD4F07006808D9 /* AppDelegate.swift in Sources */,
+				FF80EEF11CEA61B2006158EA /* AlarmListTableViewController.swift in Sources */,
+				FF80EEF51CEA620E006158EA /* SwitchTableViewCell.swift in Sources */,
+				FF80EEF31CEA61E5006158EA /* AlarmDetailTableViewController.swift in Sources */,
 				1A0FB7BF1CE19229006808D9 /* DateHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +171,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1A0FB7821CDD4F07006808D9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A0FB7831CDD4F07006808D9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1A0FB7871CDD4F07006808D9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

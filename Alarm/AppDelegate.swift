@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+//        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+//        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         return true
     }
 
@@ -41,12 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        let alert = UIAlertController(title: "Time's up", message: nil, preferredStyle: .Alert)
-        let action = UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil)
-        alert.addAction(action)
-        window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-    }
+//    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+//        let alert = UIAlertController(title: "Time's up", message: nil, preferredStyle: .Alert)
+//        let action = UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil)
+//        alert.addAction(action)
+//        window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+//    }
 
 
 }
