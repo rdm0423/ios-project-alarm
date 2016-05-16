@@ -19,6 +19,11 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,11 +42,6 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return AlarmController.sharedController.alarms.count
@@ -49,7 +49,7 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("switchCell", forIndexPath: indexPath) as? SwitchTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("alarmCell", forIndexPath: indexPath) as? SwitchTableViewCell
 
         let alarm = AlarmController.sharedController.alarms[indexPath.row]
         cell?.updateWithAlarm(alarm)
@@ -83,7 +83,6 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
- 
 
     /*
     // Override to support rearranging the table view.
