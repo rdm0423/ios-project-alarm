@@ -27,6 +27,14 @@ class SwitchTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func updateWithAlarm(alarm: Alarm) {
+        
+        timeLabel.text = alarm.fireTimeAsString
+        nameLabel.text = alarm.name
+        alarmSwitch.on = alarm.enabled
+    }
+    
+    
     @IBAction func switchValueChanged(sender: AnyObject) {
         
         // implement via protocol
