@@ -37,6 +37,8 @@ class AlarmController {
         alarms.removeAtIndex(index)
     }
     
-    
+    func toggleEnabled(alarm: Alarm) {
+        alarm.enabled = !alarm.enabled
+    }
     
 }

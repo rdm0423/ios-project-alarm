@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmListTableViewController: UITableViewController, SwitchTableViewCell {
+class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,16 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCell {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func switchCellSwitchValueChanged(cell: SwitchTableViewCell) {
+        
+        guard let indexPath = tableView.indexPathForCell(cell) else {
+            return
+        }
+        let alarm = AlarmController.sharedController.alarms[indexPath.row]
+        AlarmController.sharedController.toggleEnabled(alarm)
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
     // MARK: - Table view data source
@@ -45,6 +55,7 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCell {
         cell?.updateWithAlarm(alarm)
         
         // delegate
+        cell?.delegate = self
 
         return cell ?? UITableViewCell()
     }
@@ -89,14 +100,23 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCell {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let detailTVC = segue.destinationViewController as? AlarmDetailTableViewController
+        
+        if segue.identifier == "alarmDetailSegue" {
+            
+            guard let indexPath = tableView.indexPathForSelectedRow else {
+                return
+            }
+            let alarm = AlarmController.sharedController.alarms[indexPath.row]
+            detailTVC?.alarm = alarm
+        }
     }
-    */
-
 }

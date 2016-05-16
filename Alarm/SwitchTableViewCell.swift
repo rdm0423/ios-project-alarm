@@ -14,7 +14,7 @@ class SwitchTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var alarmSwitch: UISwitch!
     
-    
+    weak var delegate: SwitchTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,11 +38,10 @@ class SwitchTableViewCell: UITableViewCell {
     @IBAction func switchValueChanged(sender: AnyObject) {
         
         // implement via protocol
-        
-        
-        
+        delegate?.switchCellSwitchValueChanged(self)
     }
-    
-    
+}
 
+protocol SwitchTableViewCellDelegate: class {
+    func switchCellSwitchValueChanged(cell: SwitchTableViewCell)
 }

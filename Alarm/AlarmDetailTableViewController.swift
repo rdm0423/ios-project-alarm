@@ -8,20 +8,25 @@
 
 import UIKit
 
-
-
-
 class AlarmDetailTableViewController: UITableViewController {
 
     @IBOutlet weak var alarmDatePicker: UIDatePicker!
     @IBOutlet weak var alarmTextField: UITextField!
     @IBOutlet weak var enableButton: UIButton!
     
-    
+    var alarm: Alarm?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        if let alarm = alarm {
+            updateWithAlarm(alarm)
+        }
+        
+        setupView()
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -35,13 +40,56 @@ class AlarmDetailTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonTapped(sender: AnyObject) {
+        
+        guard let title = alarmTextField.text, thisMorningAtMidnight = DateHelper.thisMorningAtMidnight else {
+            return
+        }
+        let timeIntervalSinceMidnight = alarmDatePicker.date.timeIntervalSinceDate(thisMorningAtMidnight)
+        if let alarm = alarm {
+            AlarmController.sharedController.updateAlarm(alarm, fireTimeFromMidnight: timeIntervalSinceMidnight, name: title)
+        } else {
+            let alarm = AlarmController.sharedController.addAlarm(timeIntervalSinceMidnight, name: title)
+            self.alarm = alarm
+        }
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     @IBAction func enableButtonTapped(sender: AnyObject) {
+        
+        guard let alarm = alarm else {return}
+        AlarmController.sharedController.toggleEnabled(alarm)
+        setupView()
     }
     
+    func updateWithAlarm(alarm: Alarm) {
+        
+        guard let thisMorningAtMidnight = DateHelper.thisMorningAtMidnight else {
+            return
+        }
+        alarmDatePicker.setDate(NSDate(timeInterval: alarm.fireTimeFromMidnight, sinceDate: thisMorningAtMidnight), animated: false)
+        alarmTextField.text = alarm.name
+        self.title = alarm.name
+    }
     
-    
+    func setupView() {
+        
+        if alarm == nil {
+            enableButton.hidden = true
+        } else {
+            enableButton.hidden = false
+            
+            if alarm?.enabled == true {
+                
+                enableButton.setTitle("Disable Alarm", forState: .Normal)
+                enableButton.setTitleColor(.lightGrayColor(), forState: .Normal)
+                enableButton.backgroundColor = .redColor()
+            } else {
+                enableButton.setTitle("Enable Alarm", forState: .Normal)
+                enableButton.setTitleColor(.whiteColor(), forState: .Normal)
+                enableButton.backgroundColor = .greenColor()
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
