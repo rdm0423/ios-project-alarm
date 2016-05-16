@@ -12,6 +12,13 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let backgroundImage = UIImage(named: "back.png")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        
+        // center and scale background image
+        imageView.contentMode = .ScaleAspectFill
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -99,6 +106,11 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
     }
     */
 
+    
+    // MARK: Custom BackGround with Clear cells
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.2)
+    }
     
     // MARK: - Navigation
 

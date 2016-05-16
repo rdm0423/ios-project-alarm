@@ -40,6 +40,7 @@ class SwitchTableViewCell: UITableViewCell {
         // implement via protocol
         delegate?.switchCellSwitchValueChanged(self)
     }
+    
 }
 
 protocol SwitchTableViewCellDelegate: class {

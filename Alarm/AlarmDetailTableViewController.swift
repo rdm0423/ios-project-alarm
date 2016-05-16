@@ -19,12 +19,24 @@ class AlarmDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         if let alarm = alarm {
             updateWithAlarm(alarm)
         }
         
         setupView()
+        
+        
+        // Custom Coloring
+        let backgroundImage = UIImage(named: "back.png")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        alarmDatePicker.backgroundColor = UIColor(red:0.04, green:0.15, blue:0.29, alpha:00.5)
+        alarmTextField.backgroundColor = UIColor(red:0.04, green:0.15, blue:0.29, alpha:00.7)
+        
+        // center and scale background image
+        imageView.contentMode = .ScaleAspectFill
+        
+        
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -92,6 +104,11 @@ class AlarmDetailTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    // MARK: Custom BackGround with Clear cells
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
+    }
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections

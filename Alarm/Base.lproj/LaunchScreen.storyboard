@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +17,51 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="Lix-dc-ohP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="53L-X1-gXA">
+                                <rect key="frame" x="167" y="181" width="267" height="238"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="53L-X1-gXA" secondAttribute="height" multiplier="267:238" id="lXv-uU-Zt8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBm-QP-2Al">
+                                <rect key="frame" x="252" y="427" width="97" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="BF5-li-pCJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Copyright Ross McIlwaine 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hq-wy-RSj">
+                                <rect key="frame" x="173" y="559" width="255" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="QC8-1L-Hzm"/>
+                                    <constraint firstAttribute="height" constant="21" id="VJg-D5-GGY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vBm-QP-2Al" firstAttribute="top" secondItem="53L-X1-gXA" secondAttribute="bottom" constant="8" symbolic="YES" id="1La-BP-6e6"/>
+                            <constraint firstItem="Lix-dc-ohP" firstAttribute="centerX" secondItem="vBm-QP-2Al" secondAttribute="centerX" id="ALc-dw-5es"/>
+                            <constraint firstItem="Lix-dc-ohP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="KqN-ax-hzt"/>
+                            <constraint firstAttribute="bottom" secondItem="2hq-wy-RSj" secondAttribute="bottom" constant="20" symbolic="YES" id="LAh-Ic-udx"/>
+                            <constraint firstItem="2hq-wy-RSj" firstAttribute="top" secondItem="vBm-QP-2Al" secondAttribute="bottom" constant="97" id="NBc-dw-sTx"/>
+                            <constraint firstAttribute="trailing" secondItem="Lix-dc-ohP" secondAttribute="trailing" id="TTM-J2-0Lf"/>
+                            <constraint firstItem="53L-X1-gXA" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="161" id="Ury-Bx-uux"/>
+                            <constraint firstItem="Lix-dc-ohP" firstAttribute="centerY" secondItem="53L-X1-gXA" secondAttribute="centerY" id="fL1-Ff-XEZ"/>
+                            <constraint firstItem="vBm-QP-2Al" firstAttribute="centerX" secondItem="2hq-wy-RSj" secondAttribute="centerX" id="fSR-y9-PCx"/>
+                            <constraint firstItem="Lix-dc-ohP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="jaC-DO-T7W"/>
+                            <constraint firstItem="53L-X1-gXA" firstAttribute="centerX" secondItem="vBm-QP-2Al" secondAttribute="centerX" id="kaL-Av-cfs"/>
+                            <constraint firstItem="Lix-dc-ohP" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="soZ-zc-XV3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +69,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="375" height="667"/>
+        <image name="clock" width="912" height="912"/>
+    </resources>
 </document>
