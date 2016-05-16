@@ -34,7 +34,7 @@ class Alarm: Equatable {
     var fireTimeAsString: String {
         
         let fireTimeFromMidnight = Int(self.fireTimeFromMidnight)
-        let hours = fireTimeFromMidnight/60/60
+        let hours = (fireTimeFromMidnight/60)/60
         let minutes = (fireTimeFromMidnight - (hours*60*60))/60
         
         // handles 24hr clock model
