@@ -39,11 +39,13 @@ class Alarm: Equatable {
         
         // handles 24hr clock model
         if hours >= 13 {
-            return String(format: "%2d:%02d PM", arguments: [hours - 12, minutes])
-        } else if hours >= 12 {
-            return String(format: "%2d:%02d PM", arguments: [hours, minutes])
-        } else {
-            return String(format: "%2d:%02d AM", arguments: [hours, minutes])
+            return String(format: "%02d:%02d PM", arguments: [hours - 12, minutes])
+        }else if hours >= 12 {
+            return String(format: "%02d:%02d PM", arguments: [hours, minutes])
+        } else if hours == 0 {
+            return String(format: "%02d:%02d AM", arguments: [12, minutes])
+        }else {
+            return String(format: "%02d:%02d AM", arguments: [hours, minutes])
         }
     }
     
