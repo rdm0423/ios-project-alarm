@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDelegate {
+class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDelegate, AlarmScheduler {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +44,15 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
         }
         let alarm = AlarmController.sharedController.alarms[indexPath.row]
         AlarmController.sharedController.toggleEnabled(alarm)
+        
+        // Local Notification
+        if alarm.enabled {
+            scheduleLocalNotification(alarm)
+        } else {
+            cancelLocalNotification(alarm)
+        }
+        
+        
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
@@ -85,7 +94,11 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
             let alarm = AlarmController.sharedController.alarms[indexPath.row]
             AlarmController.sharedController.deleteAlarm(alarm)
             
+            // cancel notification
+            cancelLocalNotification(alarm)
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    

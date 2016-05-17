@@ -17,6 +17,7 @@
 		FF80EEF71CEA6262006158EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF80EEF61CEA6262006158EA /* Main.storyboard */; };
 		FF80EEFB1CEA6864006158EA /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF80EEFA1CEA6864006158EA /* Alarm.swift */; };
 		FF80EEFE1CEA6BDA006158EA /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF80EEFD1CEA6BDA006158EA /* AlarmController.swift */; };
+		FFF32BB41CEBAB1C00EE26F6 /* Zings1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFF32BB31CEBAB1C00EE26F6 /* Zings1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FF80EEF61CEA6262006158EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FF80EEFA1CEA6864006158EA /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		FF80EEFD1CEA6BDA006158EA /* AlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
+		FFF32BB31CEBAB1C00EE26F6 /* Zings1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Zings1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				FF80EEFF1CEA6BDF006158EA /* Model Controller */,
 				FF80EEFC1CEA686B006158EA /* Model */,
 				1A0FB7BE1CE19229006808D9 /* DateHelper.swift */,
+				FFF32BB31CEBAB1C00EE26F6 /* Zings1.mp3 */,
 				FF80EEF61CEA6262006158EA /* Main.storyboard */,
 				1A0FB7851CDD4F07006808D9 /* Assets.xcassets */,
 				1A0FB7871CDD4F07006808D9 /* LaunchScreen.storyboard */,
@@ -169,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF32BB41CEBAB1C00EE26F6 /* Zings1.mp3 in Resources */,
 				FF80EEF71CEA6262006158EA /* Main.storyboard in Resources */,
 				1A0FB7891CDD4F07006808D9 /* LaunchScreen.storyboard in Resources */,
 				1A0FB7861CDD4F07006808D9 /* Assets.xcassets in Resources */,
