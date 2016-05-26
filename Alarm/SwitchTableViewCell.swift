@@ -16,31 +16,18 @@ class SwitchTableViewCell: UITableViewCell {
     
     weak var delegate: SwitchTableViewCellDelegate?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func updateWithAlarm(alarm: Alarm) {
         
         timeLabel.text = alarm.fireTimeAsString
         nameLabel.text = alarm.name
         alarmSwitch.on = alarm.enabled
     }
-    
-    
+
     @IBAction func switchValueChanged(sender: AnyObject) {
         
         // implement via protocol
         delegate?.switchCellSwitchValueChanged(self)
     }
-    
 }
 
 protocol SwitchTableViewCellDelegate: class {

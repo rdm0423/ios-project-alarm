@@ -80,10 +80,7 @@ class Alarm: NSObject, NSCoding {
         aCoder.encodeObject(name, forKey: kName)
         aCoder.encodeObject(enabled, forKey: kEnabled)
         aCoder.encodeObject(uuid, forKey: kUUID)
-        
     }
-    
-    
 }
 
 func ==(lhs: Alarm, rhs: Alarm) -> Bool {
